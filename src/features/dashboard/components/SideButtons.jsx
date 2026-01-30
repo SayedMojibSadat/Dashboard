@@ -21,9 +21,13 @@ function SideButtons({ icon, title, active, onClick, options }) {
                             {options &&
                                 options.map((item, index) => (
                                     <div
-                                        onClick={item.onClick}
-                                        className={`h-10 w-full hover:bg-[#73737340] ${active ? 'bg-[#73737340]' : ''} text-neutral-400 transition-all duration-300 cursor-pointer rounded-lg flex flex-row items-center justify-start`}
-                                    >
+                                        key={index}
+                                        icon={item.icon}
+                                        title={item.title}
+                                        active={activeIndex === index}
+                                        options={item.options && item.options}
+                                        onClick={() => setActiveIndex(index)}
+                                        >
                                         <div className={`h-full w-1 rounded-br rounded-tr mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
                                         {item.icon}
                                         <span className='ml-2 font-bold text-sm'>{item.title}</span>
