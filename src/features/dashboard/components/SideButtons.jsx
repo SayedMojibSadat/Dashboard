@@ -12,7 +12,7 @@ function SideButtons({ icon, title, active, onClick, options }) {
                     text-neutral-400 transition-all duration-300
                     cursor-pointer rounded-lg flex`}
                 >
-                    <div className={`h-full rounded-l w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
+                    <div className={`h-full rounded-l-lg w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
 
                     <div className='w-full flex flex-col'>
                         <div className='h-10 flex flex-row items-center justify-between'>
@@ -24,7 +24,7 @@ function SideButtons({ icon, title, active, onClick, options }) {
                         </div>
 
                         {active && (
-                            <div className='flex flex-col pt-2 gap-1'>
+                            <div className='flex flex-col pt-2 ml-4 border-l-2 mb-5 mt-2 pl-1 border-neutral-700 gap-1'>
                                 {options.map((item, index) => (
                                     <div
                                         key={index}
@@ -54,7 +54,7 @@ function SideButtons({ icon, title, active, onClick, options }) {
                         text-neutral-400 transition-all duration-300
                         cursor-pointer rounded-lg flex items-center`}
                 >
-                    <div className={`h-full rounded-l w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
+                    <div className={`h-full rounded-l-lg w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
                     {icon}
                     <span className='ml-2 font-bold text-sm'>{title}</span>
                 </div>
