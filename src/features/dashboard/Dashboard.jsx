@@ -111,14 +111,16 @@ function Dashboard() {
                         </span>
                     </div>
                 </div>
-                <div className='h-full w-3/4'></div>
+                <div className='h-full w-3/4'>
+                <h3 className='text-2xl text-white mt-8'>Dashboard</h3>
+                </div>
             </div>
 
             {/* ================= Section ================= */}
             <div className='h-8/9 w-full flex flex-row'>
 
                 {/* ================= Aside ================= */}
-                <div className='h-full w-1/8 bg-neutral-800 p-3 pt-5 flex flex-col gap-1'>
+                <div className='h-full w-1/4 bg-neutral-800 p-3 pt-5 flex flex-col gap-1'>
 
                     {sideButtons &&
                         sideButtons.map((item, index) => (
@@ -147,7 +149,7 @@ function Dashboard() {
                 </div>
 
                 {/* ================= Content ================= */}
-                <div className='h-full w-7/9'></div>
+                <div className='h-full w-3/4'></div>
 
             </div>
         </div>
