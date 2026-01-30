@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardPage from "../../pages/dashboard/pages/DashboardPage";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter, Router } from "react-router";
 import DashboardRouter from "../../routes/DashboardRouter";
 
 function Content() {

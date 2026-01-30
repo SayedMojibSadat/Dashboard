@@ -71,7 +71,7 @@ function Aside() {
             if (!item.options) {
               setActiveId({ menu: index, sub: null });
             }
-            navigate(`/${item.title.toLowerCase()}`);
+            navigate(`/app/${item.title.toLowerCase()}`);
           }}
           onSubClick={(subIndex) => setActiveId({ menu: index, sub: subIndex })}
         />

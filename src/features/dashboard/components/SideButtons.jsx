@@ -44,7 +44,8 @@ function SideButtons({ icon, title, active, onClick, options, activeSubIndex, on
                                         e.stopPropagation();
                                         onSubClick(index);
                                         if (item.onClick) item.onClick();
-                                        navigate(`/${title.toLowerCase()}/${item.title.toLowerCase()}`);
+                                        item.title == 'login'
+                                        navigate(`/app/${item.title.toLowerCase()}`);
                                     }}
                                     className={`h-10 w-full hover:bg-[#73737340] transition-all duration-300
                                     ${activeSubIndex === index ? 'bg-[#73737340] text-neutral-200' : 'text-neutral-500'}

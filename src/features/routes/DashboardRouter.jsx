@@ -7,9 +7,9 @@ import Leads from '../pages/leads/pages/Leads'
 function DashboardRouter() {
     return (
         <Routes>
-            <Route path='/' element={<DashboardPage />} />
-            <Route path='/dashboard' element={<DashboardPage />} />
-            <Route path='/leads' element={<Leads />} />
+            <Route path='' element={<DashboardPage />} />
+            <Route path='dashboard' element={<DashboardPage />} />
+            <Route path="leads" element={<Leads />} />
         </Routes>
     )
 }
