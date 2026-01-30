@@ -1,16 +1,14 @@
 import React from 'react'
 import { Route, Routes } from 'react-router'
-import Dashboard from '../dashboard/Dashboard'
-import Products from '../products/Products'
+import Dashboard from '../dashboard/pages/Dashboard'
 
 function DashboardRouter() {
-  return (
-    <Routes>
-        <Route path='/' element={<Dashboard />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/products' element={<Products />} />
-    </Routes>
-  )
+    return (
+        <Routes>
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/dashboard' element={<Dashboard />} />
+        </Routes>
+    )
 }
 
 export default DashboardRouter
