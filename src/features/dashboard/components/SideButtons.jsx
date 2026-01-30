@@ -1,48 +1,60 @@
-import React, { act } from 'react'
+import React from 'react'
+import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
 function SideButtons({ icon, title, active, onClick, options }) {
     return (
         <>
             {options ?
-                < div
+                <div
                     onClick={onClick}
-                    className={`${active ? 'h-10' : 'h-fit'} w-full hover:bg-[#73737340] text-neutral-400 transition-all duration-300 cursor-pointer rounded-lg`}
+                    className={`w-full hover:bg-[#73737340]
+                    ${active ? 'bg-[#73737340]' : ''}
+                    text-neutral-400 transition-all duration-300
+                    cursor-pointer rounded-lg flex`}
                 >
-                    <div className='h-10 flex flex-row items-center justify-between'>
-                        <div className='flex flex-row h-full items-center justify-start'>
-                            <div className={`h-full w-1 rounded-br rounded-tr mr-2`}></div>
-                            {icon}
-                            <span className='ml-2 font-bold text-sm'>{title}</span>
-                        </ div>
-                        <span className='pr-4'>{active ? '⩓' : '⩔'}</span>
-                    </div>
-                    {active &&
-                        <div className={`h-fit flex flex-col pt-2 gap-1`}>
-                            {options &&
-                                options.map((item, index) => (
+                    <div className={`h-full rounded-l w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
+
+                    <div className='w-full flex flex-col'>
+                        <div className='h-10 flex flex-row items-center justify-between'>
+                            <div className='flex flex-row h-full items-center justify-start'>
+                                {icon}
+                                <span className='ml-2 font-bold text-sm'>{title}</span>
+                            </div>
+                            <span className='pr-4'>{active ? <RiArrowUpSLine size={25} /> : <RiArrowDownSLine size={25} />}</span>
+                        </div>
+
+                        {active && (
+                            <div className='flex flex-col pt-2 gap-1'>
+                                {options.map((item, index) => (
                                     <div
                                         key={index}
-                                        icon={item.icon}
-                                        title={item.title}
-                                        active={activeIndex === index}
-                                        options={item.options && item.options}
-                                        onClick={() => setActiveIndex(index)}
-                                        >
-                                        <div className={`h-full w-1 rounded-br rounded-tr mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
+                                        onClick={(e) => {
+                                            e.stopPropagation()
+                                            item.onClick && item.onClick()
+                                        }}
+                                        className='h-10 w-full hover:bg-[#73737340]
+                                    cursor-pointer rounded-lg flex items-center'
+                                    >
+                                        <div className='h-full w-1 mr-2'></div>
                                         {item.icon}
-                                        <span className='ml-2 font-bold text-sm'>{item.title}</span>
+                                        <span className='ml-2 font-bold text-sm'>
+                                            {item.title}
+                                        </span>
                                     </div>
-                                ))
-                            }
-                        </div>
-                    }
-                </div >
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </div>
                 :
                 <div
                     onClick={onClick}
-                    className={`h-10 w-full hover:bg-[#73737340] ${active ? 'bg-[#73737340]' : ''} text-neutral-400 transition-all duration-300 cursor-pointer rounded-lg flex flex-row items-center justify-start`}
+                    className={`h-10 w-full hover:bg-[#73737340]
+                        ${active ? 'bg-[#73737340]' : ''}
+                        text-neutral-400 transition-all duration-300
+                        cursor-pointer rounded-lg flex items-center`}
                 >
-                    <div className={`h-full w-1 rounded-br rounded-tr mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
+                    <div className={`h-full rounded-l w-1 mr-2 ${active ? 'bg-blue-500' : ''}`}></div>
                     {icon}
                     <span className='ml-2 font-bold text-sm'>{title}</span>
                 </div>
