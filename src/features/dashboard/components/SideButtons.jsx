@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import { useNavigate } from 'react-router';
 
 function SideButtons({ icon, title, active, onClick, options, activeSubIndex, onSubClick }) {
     const [isOpen, setIsOpen] = useState(false);
+
+    const navigate = useNavigate()
 
     const handleToggle = () => {
         setIsOpen(!isOpen);
@@ -41,6 +44,7 @@ function SideButtons({ icon, title, active, onClick, options, activeSubIndex, on
                                         e.stopPropagation();
                                         onSubClick(index);
                                         if (item.onClick) item.onClick();
+                                        navigate(`/${title.toLowerCase()}/${item.title.toLowerCase()}`);
                                     }}
                                     className={`h-10 w-full hover:bg-[#73737340] transition-all duration-300
                                     ${activeSubIndex === index ? 'bg-[#73737340] text-neutral-200' : 'text-neutral-500'}
