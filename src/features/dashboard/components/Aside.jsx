@@ -12,9 +12,12 @@ import { IoIosWarning, IoMdSettings } from "react-icons/io";
 import { BsFillInboxesFill, BsTable } from "react-icons/bs";
 import { RiCodeBoxFill } from "react-icons/ri";
 import SideButtons from '../components/SideButtons';
+import { useNavigate } from 'react-router';
 
 function Aside() {
   const [activeId, setActiveId] = useState({ menu: 0, sub: null });
+
+  const navigate = useNavigate();
 
   const sideButtons = [
     { title: 'Dashboard', icon: <TbLayoutDashboardFilled className='text-2xl' /> },
@@ -68,6 +71,7 @@ function Aside() {
             if (!item.options) {
               setActiveId({ menu: index, sub: null });
             }
+            navigate(`/${item.title.toLowerCase()}`);
           }}
           onSubClick={(subIndex) => setActiveId({ menu: index, sub: subIndex })}
         />
