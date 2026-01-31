@@ -21,22 +21,8 @@ function Aside() {
 
   const sideButtons = [
     { title: 'Dashboard', icon: <TbLayoutDashboardFilled className='text-2xl' /> },
-    { title: 'Leads', icon: <HiInboxArrowDown className='text-2xl' /> },
-    { title: 'Transactions', icon: <BsCoin className='text-2xl' /> },
-    { title: 'Analytics', icon: <SiGoogleanalytics className='text-2xl' /> },
-    { title: 'Integrations', icon: <MdOutlineElectricBolt className='text-2xl' /> },
-    { title: 'Calendar', icon: <IoCalendar className='text-2xl' /> },
-    {
-      title: 'Pages',
-      icon: <IoDocumentsSharp className='text-2xl' />,
-      options: [
-        { title: 'Login', icon: <RiLoginBoxFill className='text-[1.1rem]' /> },
-        { title: 'Register', icon: <FaUser className='text-[1.1rem]' /> },
-        { title: 'Forgot Password', icon: <HiMiniKey className='text-[1.1rem]' /> },
-        { title: 'Blank Page', icon: <IoDocumentSharp className='text-[1.1rem]' /> },
-        { title: 'Error 404', icon: <IoIosWarning className='text-[1.1rem]' /> },
-      ]
-    },
+    { title: 'ComponentBar', icon: <HiInboxArrowDown className='text-2xl' /> },
+
     {
       title: 'Settings',
       icon: <IoMdSettings className='text-2xl' />,
@@ -46,15 +32,7 @@ function Aside() {
         { title: 'Team Members', icon: <HiMiniUsers className='text-[1.1rem]' /> },
       ]
     },
-    {
-      title: 'Documentations',
-      icon: <HiDocumentText className='text-2xl' />,
-      options: [
-        { title: 'Getting Started', icon: <HiDocumentText className='text-[1.1rem]' /> },
-        { title: 'Features', icon: <BsTable className='text-[1.1rem]' /> },
-        { title: 'Components', icon: <RiCodeBoxFill className='text-[1.1rem]' /> },
-      ]
-    },
+   
   ];
 
   return (
