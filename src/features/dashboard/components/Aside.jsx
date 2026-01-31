@@ -19,21 +19,31 @@ function Aside() {
 
   const navigate = useNavigate();
 
-  const sideButtons = [
-    { title: 'Dashboard', icon: <TbLayoutDashboardFilled className='text-2xl' /> },
-    { title: 'ComponentBar', icon: <HiInboxArrowDown className='text-2xl' /> },
+ const sideButtons = [
+  { title: 'Dashboard', icon: <TbLayoutDashboardFilled className='text-2xl' /> },
+  { title: 'ComponentBar', icon: <HiInboxArrowDown className='text-2xl' /> },
+
+  { title: 'Components', icon: <RiCodeBoxFill className='text-2xl' /> },
+  { title: 'Analytics', icon: <SiGoogleanalytics className='text-2xl' /> },
+  { title: 'Issues', icon: <IoIosWarning className='text-2xl' /> },
+  { title: 'Deployments', icon: <MdOutlineElectricBolt className='text-2xl' /> },
+  { title: 'Financials', icon: <BsCoin className='text-2xl' /> },
+  { title: 'Engagement', icon: <FaUser className='text-2xl' /> },
+
+  { title: 'Reports', icon: <HiDocumentText className='text-2xl' /> },
+  { title: 'Tables', icon: <BsTable className='text-2xl' /> },
+  { title: 'Calendar', icon: <IoCalendar className='text-2xl' /> },
 
   {
-  title: 'Settings',
-  icon: <IoMdSettings className='text-2xl' />,
-  options: [
-    { title: 'LogOut', icon: <RiLoginBoxFill className='text-[1.1rem]' /> },
-    { title: 'Security', icon: <HiMiniKey className='text-[1.1rem]' /> },
-    { title: 'Preferences', icon: <FaUser className='text-[1.1rem]' /> },
-  ]
-}
-   
-  ];
+    title: 'Settings',
+    icon: <IoMdSettings className='text-2xl' />,
+    options: [
+      { title: 'LogOut', icon: <RiLoginBoxFill className='text-[1.1rem]' /> },
+      { title: 'Security', icon: <HiMiniKey className='text-[1.1rem]' /> },
+      { title: 'Preferences', icon: <FaUser className='text-[1.1rem]' /> },
+    ]
+  }
+];
 
   return (
     <div className='h-full w-1/4 overflow-y-auto min-h-0 custom-scrollbar bg-neutral-200 dark:bg-neutral-800 p-3 pt-5 flex flex-col gap-1'>
