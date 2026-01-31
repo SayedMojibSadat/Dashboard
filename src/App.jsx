@@ -5,12 +5,15 @@ import Content from './features/dashboard/components/Content';
 import Dashboard from './features/dashboard/pages/Dashboard';
 import LoginPage from './features/pages/loginPage/pages/LoginPage';
 
+
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Dashboard />} />
         <Route path='/app/*' element={<Dashboard />} />
-        <Route path='/app/login' element={<LoginPage />} />
+        <Route path='/app/logout' element={<LoginPage />} />
+
       </Routes>
     </BrowserRouter>
   );

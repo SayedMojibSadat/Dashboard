@@ -23,27 +23,27 @@ function Aside() {
     { title: 'Dashboard', icon: <TbLayoutDashboardFilled className='text-2xl' /> },
     { title: 'ComponentBar', icon: <HiInboxArrowDown className='text-2xl' /> },
 
-    {
-      title: 'Settings',
-      icon: <IoMdSettings className='text-2xl' />,
-      options: [
-        { title: 'Login', icon: <RiLoginBoxFill className='text-[1.1rem]' /> },
-        { title: 'Billing', icon: <BsFillInboxesFill className='text-[1.1rem]' /> },
-        { title: 'Team Members', icon: <HiMiniUsers className='text-[1.1rem]' /> },
-      ]
-    },
+  {
+  title: 'Settings',
+  icon: <IoMdSettings className='text-2xl' />,
+  options: [
+    { title: 'LogOut', icon: <RiLoginBoxFill className='text-[1.1rem]' /> },
+    { title: 'Security', icon: <HiMiniKey className='text-[1.1rem]' /> },
+    { title: 'Preferences', icon: <FaUser className='text-[1.1rem]' /> },
+  ]
+}
    
   ];
 
   return (
-    <div className='h-full w-1/4 overflow-y-auto min-h-0 custom-scrollbar bg-neutral-800 p-3 pt-5 flex flex-col gap-1'>
+    <div className='h-full w-1/4 overflow-y-auto min-h-0 custom-scrollbar bg-neutral-200 dark:bg-neutral-800 p-3 pt-5 flex flex-col gap-1'>
       {sideButtons.map((item, index) => (
         <SideButtons
           key={index}
           icon={item.icon}
           title={item.title}
-          active={activeId.menu === index}
-          activeSubIndex={activeId.menu === index ? activeId.sub : null}
+          active={activeId.menu == index}
+          activeSubIndex={activeId.menu == index ? activeId.sub : null}
           options={item.options}
           onClick={() => {
             if (!item.options) {

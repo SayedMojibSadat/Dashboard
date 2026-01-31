@@ -42,9 +42,9 @@ function DashboardPage() {
 
 
     return (
-        <div className="h-full w-3/4 overflow-y-auto min-h-0 custom-scrollbar p-6 text-white">
+        <div className="h-full w-3/4 overflow-y-auto min-h-0 custom-scrollbar p-6 text-neutral-900 dark:text-white">
             <div className="flex justify-start mb-4">
-                <input type="date" className="bg-neutral-700 text-white p-2 rounded-md" defaultValue="2026-01-30" />
+                <input type="date" className="bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-white border border-neutral-300 dark:border-neutral-600 p-2 rounded-md" defaultValue="2026-01-30" />
             </div>
 
             <div className="grid grid-cols-4 gap-6 mb-6">
@@ -88,7 +88,7 @@ function DashboardPage() {
                                 ["Affiliates", "12,359", "20.9%"],
                                 ["Organic", "10,345", "10.3%"],
                             ].map(([source, users, conversion], idx) => (
-                                <tr key={idx} className="border-b border-neutral-700">
+                                <tr key={idx} className="border-b border-neutral-200 dark:border-neutral-700">
                                     <td className="py-2">{source}</td>
                                     <td className="py-2">{users}</td>
                                     <td className="py-2">{conversion}</td>
@@ -100,7 +100,7 @@ function DashboardPage() {
             </div>
 
             <div className="mt-8">
-                <div className="bg-neutral-800 p-4 rounded-lg flex flex-col items-center">
+                <div className="bg-white dark:bg-neutral-800 p-4 rounded-lg flex flex-col items-center border border-neutral-200 dark:border-transparent shadow-sm dark:shadow-none">
                     <h4 className="text-lg font-semibold mb-4">Component Distribution</h4>
                     <div className="w-56 h-56">
                         <DonutChart title="" data={donutData} />
